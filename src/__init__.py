@@ -76,12 +76,6 @@ if __name__ == '__main__':
     port = config_data['port']
 
     if config_data['current_version'] == '0.0.0':
-        set_thread = Thread(target=set_server_files(prefix_path))
-        set_thread.start()
-        set_thread.join()
-
-        restart_thread = Thread(target=run_restart_script(prefix_path))
-        restart_thread.start()
-        exit(0)
+        set_server_files(prefix_path)
 
     app.run(host='0.0.0.0', port=port)

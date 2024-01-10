@@ -1,5 +1,6 @@
 from os import path
 from subprocess import CalledProcessError, run
+from threading import Thread
 from yaml import safe_load
 
 
@@ -43,6 +44,20 @@ def find_config_file(start_dir, file_name):
 
 
 def set_server_files(prefix_path):
+    try:
+        set_thread = Thread(target=run_set_script(prefix_path))
+        set_thread.start()
+        set_thread.join()
+
+        restart_thread = Thread(target=run_restart_script(prefix_path))
+        restart_thread.start()
+        exit(0)
+
+    except CalledProcessError:
+        pass
+
+
+def run_set_script(prefix_path):
     try:
         run(f'bash {prefix_path}/set.sh', shell=True, check=True)
     except CalledProcessError:
