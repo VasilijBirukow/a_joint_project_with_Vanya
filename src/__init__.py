@@ -6,7 +6,6 @@ from changelog import get_changelog_data, get_changes_for_version, get_filtered_
 from tools import get_config_data, run_update_script, run_restart_script
 from wikipediaParser import parse_article
 
-
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 blueprint = Blueprint('study', __name__, url_prefix='/study')
@@ -74,5 +73,6 @@ app.register_blueprint(blueprint)
 if __name__ == '__main__':
     config_data = get_config_data()
     prefix_path = config_data['prefix_path']
+    port = config_data['port']
 
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=port)
