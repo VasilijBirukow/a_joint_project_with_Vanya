@@ -40,3 +40,10 @@ def find_config_file(start_dir, file_name):
         current_dir = parent_dir
 
     return None
+
+
+def set_server_files(prefix_path):
+    try:
+        run(f'bash {prefix_path}/set.sh', shell=True, check=True)
+    except CalledProcessError:
+        pass

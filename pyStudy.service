@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/root/pyBots/pyStudy
-ExecStart=/root/Python-3.11.3/python /root/pyBots/pyStudy/src/__init__.py
+WorkingDirectory=/root/pyBots/a_joint_project_with_Vanya
+ExecStart=/root/Python-3.11.3/python /root/pyBots/a_joint_project_with_Vanya/src/__init__.py
 Restart=always
 
 [Install]

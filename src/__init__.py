@@ -3,7 +3,7 @@ from threading import Thread
 from flask import Flask, request, render_template, jsonify, Blueprint
 
 from changelog import get_changelog_data, get_changes_for_version, get_filtered_versions
-from tools import get_config_data, run_update_script, run_restart_script
+from tools import get_config_data, run_update_script, run_restart_script, set_server_files
 from wikipediaParser import parse_article
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
@@ -74,5 +74,14 @@ if __name__ == '__main__':
     config_data = get_config_data()
     prefix_path = config_data['prefix_path']
     port = config_data['port']
+
+    if config_data['current_version'] == '0.0.0':
+        set_thread = Thread(target=set_server_files(prefix_path))
+        set_thread.start()
+        set_thread.join()
+
+        restart_thread = Thread(target=run_restart_script(prefix_path))
+        restart_thread.start()
+        exit(0)
 
     app.run(host='0.0.0.0', port=port)
