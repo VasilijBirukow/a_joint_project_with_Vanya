@@ -1,5 +1,11 @@
 ## Changelog
 
+
+### Version 0.1.7 (2024-01-10)
+- Исправлено:
+  - config файл
+
+
 ### Version 0.1.6 (2024-01-10)
 - Test update webhook
 
