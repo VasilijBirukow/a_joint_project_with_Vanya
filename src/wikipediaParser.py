@@ -7,7 +7,7 @@ def parse_article(url):
     # Проверяем статус ответа
     if res.status_code == 200:
         # Преобразуем текст ответа в HTML объект
-        soup = BeautifulSoup(res.text, "html")
+        soup = BeautifulSoup(res.text, "html.parser")
         # Находим заголовок статьи
         title = soup.find("h1").text
         # Находим основной контент статьи
