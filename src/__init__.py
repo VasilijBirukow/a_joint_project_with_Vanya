@@ -28,7 +28,7 @@ def get_article():
 def github_webhook():
     data = request.json
 
-    if 'ref' in data and data['ref'] == 'refs/heads/master':
+    if 'ref' in data and data['ref'] == 'refs/heads/main':
         try:
             update_thread = Thread(target=run_update_script(prefix_path))
             update_thread.start()
