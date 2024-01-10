@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/pyBots/pyStudy || exit
+cd /root/pyBots/a_joint_project_with_Vanya || exit
 
 git stash
 git pull
