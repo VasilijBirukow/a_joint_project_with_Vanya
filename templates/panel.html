@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki парсер</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/panel-dark-theme-styles.css">
 </head>
 <body>
     <div class="container">
@@ -17,8 +18,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex align-items-center justify-content-between">
                         <h3 class="card-title">Введите адрес URL статьи из Wikipedia</h3>
+                        <button id="toggle-theme" type="button" class="btn btn-dark">Темная тема</button>
                     </div>
                     <div class="card-body">
                         <form action="/study/article" method="POST">
@@ -36,11 +38,14 @@
                 </div>
             </div>
         </div>
+        <div>
+            <br>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Статья с википедии</h3>
+                        <h3 class="card-title">Статья из Wikipedia</h3>
                     </div>
                     <div class="card-body" id="article">
                         {% if article %}
@@ -51,6 +56,7 @@
             </div>
         </div>
     </div>
-<script type="module" src="/static/js/main.js"></script>
+    <script type="module" src="/static/js/dark-theme.js"></script>
+    <script type="module" src="/static/js/main.js"></script>
 </body>
 </html>

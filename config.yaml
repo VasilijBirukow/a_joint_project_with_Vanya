@@ -1,4 +1,4 @@
-current_version: 0.0.0
+current_version: 0.0.1
 
-prefix_path: '/root/pyBots/a_joint_project_with_Vanya'
+prefix_path: '..'
 port: 82

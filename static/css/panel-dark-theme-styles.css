@@ -1,0 +1,56 @@
+/* Общие стили для dark mode */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+}
+
+/* Input */
+.dark-mode input {
+    background-color: #222;
+    border: 1px solid #555;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.dark-mode input::placeholder {
+    color: #aaa;
+}
+
+.dark-mode input:focus,
+.dark-mode input:hover {
+    background-color: #626262;
+    color: #fff;
+}
+
+/* Button Styles */
+/* Primary Button */
+.dark-mode .btn-primary {
+    background-color: #357ebd;
+    border-color: #357ebd;
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: #4c96cc;
+    border-color: #4c96cc;
+}
+
+.dark-mode .btn-primary.focus {
+    background-color: #235f91;
+    border-color: #235f91;
+}
+
+/* Card Header */
+.dark-mode .card-header {
+    background-color: #222;
+    border: 1px solid #444;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.dark-mode .card-body {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+}
