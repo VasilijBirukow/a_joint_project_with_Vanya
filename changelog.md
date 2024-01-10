@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.1.6 (2024-01-10)
+- Test update webhook
+
+ 
 ### Version 0.1.5 (2024-01-10)
 - Исправлен:
   - автоапдейт при git push
