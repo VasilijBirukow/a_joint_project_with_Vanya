@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="../static/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki парсер</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Wiki парсер</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Введите адрес URL статьи из Wikipedia</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/study/article" method="POST">
+                            <div class="form-group">
+                                <label for="url">URL</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="url" name="url" placeholder="Например, https://ru.wikipedia.org/wiki/Python">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">Получить статью</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Статья с википедии</h3>
+                    </div>
+                    <div class="card-body" id="article">
+                        {% if article %}
+                        {{ article | safe }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

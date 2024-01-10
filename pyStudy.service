@@ -1,0 +1,12 @@
+[Unit]
+Description=Учебный проект с Васей Б. (развертка на сервере)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/pyBots/pyStudy
+ExecStart=/root/Python-3.11.3/python /root/pyBots/pyStudy/src/__init__.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
