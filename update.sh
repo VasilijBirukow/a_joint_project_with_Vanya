@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/pyBots/a_joint_project_with_Vanya || exit
+cd /root/pyBots/wikipediaParser || exit
 
 git stash
 git pull
