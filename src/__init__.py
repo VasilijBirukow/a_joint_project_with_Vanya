@@ -2,9 +2,9 @@ from threading import Thread
 
 from flask import Flask, request, render_template, jsonify, Blueprint
 
+from Parser import Parser
 from changelog import get_changelog_data, get_changes_for_version, get_filtered_versions
 from tools import get_config_data, run_update_script, run_restart_script, set_server_files
-from wikipediaParser import parse_article
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
@@ -20,7 +20,7 @@ def main():
 def get_article():
     url = request.form.get('url')
     if url:
-        text = parse_article(url)
+        text = Parser(url).article
         return render_template('panel.html', article=text)
 
 
