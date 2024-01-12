@@ -20,8 +20,9 @@ def main():
 def get_article():
     url = request.form.get('url')
     if url:
-        text = Parser(url).article
-        return render_template('panel.html', article=text)
+        parser = Parser(url)
+        article = parser.get_article()
+        return render_template('panel.html', article=article)
 
 
 @blueprint.route('/update', methods=['POST'])

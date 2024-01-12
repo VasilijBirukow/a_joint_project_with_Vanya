@@ -34,7 +34,6 @@ class Parser:
         full_text.append(f"<h2>{article_name}</h2>")
 
         article_content = body.find("div", class_="mw-content-ltr mw-parser-output")
-
         tags = article_content.find_all("p")
 
         for tag in tags:
@@ -42,3 +41,6 @@ class Parser:
             full_text.append(f"<p>{info}</p>")
 
         return "\n".join(full_text)
+
+    def get_article(self):
+        return self.article
